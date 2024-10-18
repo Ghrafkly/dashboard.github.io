@@ -1,0 +1,7 @@
+@use 'colours' as col
+@use 'mixins' as mix
+
+nav
+  @include mix.nav-element(col.$deep-current, sticky)
+  top: 0
+

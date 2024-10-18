@@ -1,0 +1,16 @@
+@use 'colours' as col
+@use 'mixins' as mix
+
+footer
+  @include mix.nav-element(col.$stone, fixed)
+  bottom: 0
+  justify-content: space-between
+
+  a
+    display: flex
+    align-items: center
+    gap: 5px
+
+  // Align the icon with the text, taking into account the underline
+  span
+    padding-top: 1px

@@ -1,0 +1,35 @@
+footer {
+  width: 100%;
+  height: 60px;
+  background-color: rgb(57, 74, 88);
+  padding: 0 20px;
+  box-sizing: border-box;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+  bottom: 0;
+  justify-content: space-between;
+}
+footer a {
+  color: rgb(255, 255, 255);
+  font-size: 1em;
+}
+footer a.selected {
+  text-decoration: underline;
+}
+footer span {
+  color: rgb(255, 255, 255);
+}
+footer a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+footer span {
+  padding-top: 1px;
+}
+
+/*# sourceMappingURL=footer.css.map */

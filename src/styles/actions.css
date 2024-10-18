@@ -1,0 +1,25 @@
+#actions {
+  padding: 0;
+}
+#actions #actions-grid {
+  display: grid;
+  grid-gap: 5px;
+  font-family: Consolas, monospace;
+}
+#actions #actions-grid .action-group {
+  display: grid;
+  grid-gap: 5px;
+}
+#actions #actions-grid .action-group button {
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  margin: 0;
+  padding: 5px;
+  text-align: center;
+}
+#actions #actions-grid .action-group button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/*# sourceMappingURL=actions.css.map */

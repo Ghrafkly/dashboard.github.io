@@ -1,0 +1,25 @@
+@use 'colours' as col
+
+#actions
+  padding: 0
+
+  #actions-grid
+    display: grid
+    grid-gap: 5px
+    font-family: Consolas, monospace
+
+    .action-group
+      display: grid
+      grid-gap: 5px
+
+      button
+        background-color: transparent
+        border: 1px solid rgba(0, 0, 0, 0.1)
+        cursor: pointer
+        margin: 0
+        padding: 5px
+        text-align: center
+
+        &:hover
+          background-color: rgba(0, 0, 0, 0.1)
+
