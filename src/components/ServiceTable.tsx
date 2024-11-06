@@ -6,6 +6,8 @@ import { FaSpinner } from "react-icons/fa";
 import { FaCircleCheck, FaRegCircle, FaSquareXmark } from "react-icons/fa6";
 import { Tooltip } from "react-tooltip";
 import IconWithLink from "./common/IconWithLink.tsx";
+import { mapLink } from "../services/map-link.ts";
+import { URLS } from "../utils/constants.ts";
 
 interface ServiceTableProps {
     env: string
@@ -82,6 +84,12 @@ const ServiceTable = ({env, services, style, reload, className}: ServiceTablePro
                     const {git} = data || {};
 
                     // console.log(name, data)
+                    const links = {
+                        service: row.url,
+                        ocp: mapLink(URLS.ocp, {env: row.env, service: row.name}),
+                        branch: mapLink(URLS.github, {repo: row.repo, sha: git?.branch ?? "-"}),
+                        commit: mapLink(URLS.github, {repo: row.repo, sha: git?.commit.id.full ?? "-"}),
+                    }
 
                     let icon;
                     let tooltip;
@@ -91,12 +99,10 @@ const ServiceTable = ({env, services, style, reload, className}: ServiceTablePro
                         tooltip = "Loading..."
                     } else if (error) {
                         icon = <FaSquareXmark className="error"/>
-                        // icon = <FaRegCircle className="red"/>
-                        tooltip = error
+                        tooltip = "The API Request failed"
                     } else {
                         icon = <FaCircleCheck className="success"/>
-                        icon = <FaRegCircle className="green"/>
-                        tooltip = "Success"
+                        tooltip = "The API Request was successful"
                     }
 
                     return (
@@ -104,24 +110,32 @@ const ServiceTable = ({env, services, style, reload, className}: ServiceTablePro
                             onMouseEnter={() => setIsHovered(row)}
                             onMouseLeave={() => setIsHovered(undefined)}
                         >
-                            <td className="service">{name}</td>
-                            <td className="branch">{git?.branch ?? "-"}</td>
-                            <td className="gitID">{git?.commit.id.abbrev ?? "-"}</td>
+                            <td className="service">
+                                <a href={links.service} target="_blank" rel="noreferrer">{name}</a>
+                            </td>
+                            <td className="branch">
+                                <a href={links.branch ?? "#"} target="_blank" rel="noreferrer">{git?.branch ?? "-"}</a>
+                            </td>
+                            <td className="gitID">
+                                <a href={links.commit ?? "#"} target="_blank" rel="noreferrer">{git?.commit.id.abbrev ?? "-"}</a>
+                            </td>
                             <td className="version">{git?.build.version ?? "-"}</td>
                             <td className="updated">{git?.build.time ?? "-"}</td>
                             <td className="status" onClick={() => console.log("Status")}>
-
                                 <IconWithLink
                                     className={`${env}${name}`}
                                     href={row.url}
                                     icon={icon}
                                 />
-                                <Tooltip className="tooltip"
-                                         anchorSelect={`.${env}${name}`}
-                                         place="right"
-                                         isOpen={isHovered === row}
+                                <Tooltip
+                                    className="tooltip"
+                                    anchorSelect={`.${env}${name}`}
+                                    place="right"
+                                    isOpen={isHovered === row}
                                 >
                                     {tooltip}
+                                    <br />
+                                    <b>(Click icon to open API endpoint</b>
                                 </Tooltip>
                             </td>
                         </tr>
@@ -133,7 +147,6 @@ const ServiceTable = ({env, services, style, reload, className}: ServiceTablePro
     );
 }
 
-// create default data to populate the table
 const defaultData = (services: Service<InfoData>[]): Service<InfoData>[] => {
     return services.map(service => ({
         ...service,

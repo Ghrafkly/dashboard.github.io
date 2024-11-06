@@ -20,4 +20,5 @@ a:hover {
 
 .tooltip {
     border-radius: 5px !important;
+    font-weight: normal;
 }

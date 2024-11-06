@@ -5,8 +5,6 @@ const createServiceMap = (
     const serviceMap = new Map<string, Service<InfoData>[]>();
 
     serviceConfig.forEach(({ exclude = [], url, name, service, repo }) => {
-        // const temp = name === "devsupport" ? "http://localhost:3030/m/info" : "http://localhost:3030/m/inf"
-
         Object.entries(url).forEach(([area, urlTemplate]) => {
             envConfig[area].forEach(env => {
                 if (exclude.includes(env)) return;
@@ -17,7 +15,6 @@ const createServiceMap = (
                     env,
                     // url: urlTemplate.replace("{env}", env),
                     url: "http://localhost:3030/m/info",
-                    // url: temp,
                     repo,
                     request: {
                         data: null,

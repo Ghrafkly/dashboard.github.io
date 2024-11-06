@@ -7,7 +7,6 @@ import Backend from "./pages/Backend.tsx";
 import Home from "./pages/Home.tsx";
 import Release from "./pages/Release.tsx";
 import { QueryClient, QueryClientProvider } from "react-query";
-import Testing from "./pages/Testing.tsx";
 
 const queryClient = new QueryClient();
 
@@ -20,7 +19,6 @@ function App() {
                         <Route path="/" element={ <Home/> }/>
                         <Route path="/backend" element={ <Backend/> }/>
                         <Route path="/release" element={ <Release/> }/>
-                        <Route path="/testing" element={ <Testing/> }/>
                     </Routes>
                 <Footer/>
             </Router>

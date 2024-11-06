@@ -20,14 +20,41 @@
   &.loading
     box-shadow: 0 0 10px 0 col.$deep-sea-spray
 
-  &.true
-    animation: flash 1s 1
+  &.success.true
+    animation: flash-success 1s 1
 
-    @keyframes flash
-        0%
-            background-color: col.$sky
-        100%
-            background-color: white
+    @keyframes flash-success
+      0%
+        background-color: lightgreen
+      100%
+        background-color: white
+
+  &.warning.true
+    animation: flash-warning 1s 1
+
+    @keyframes flash-warning
+      0%
+        background-color: lightsalmon
+      100%
+        background-color: white
+
+  &.error.true
+    animation: flash-error 1s 1
+
+    @keyframes flash-error
+      0%
+        background-color: lightcoral
+      100%
+        background-color: white
+
+  &.loading.true
+    animation: flash-loading 1s 1
+
+    @keyframes flash-loading
+      0%
+        background-color: col.$sky
+      100%
+        background-color: white
 
   .table-title
     font-size: xx-large
@@ -88,7 +115,4 @@
               color: red
 
             .success
-              border: 1px solid green
-              border-radius: 50%
-              background-color: #66bf3c
-              color: lightgreen
+              color: green

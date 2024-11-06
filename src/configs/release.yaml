@@ -1,0 +1,7 @@
+links:
+  - name: "Deploy All Services"
+    url: "https://www.google.com"
+  - name: "Deploy Single Services"
+    url: "https://www.google.com"
+  - name: "Update Dashboard"
+    url: "https://www.github.com"

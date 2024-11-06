@@ -15,10 +15,43 @@
 .service-table.loading {
   box-shadow: 0 0 10px 0 rgb(122, 153, 172);
 }
-.service-table.true {
-  animation: flash 1s 1;
+.service-table.success.true {
+  animation: flash-success 1s 1;
 }
-@keyframes flash {
+@keyframes flash-success {
+  0% {
+    background-color: lightgreen;
+  }
+  100% {
+    background-color: white;
+  }
+}
+.service-table.warning.true {
+  animation: flash-warning 1s 1;
+}
+@keyframes flash-warning {
+  0% {
+    background-color: lightsalmon;
+  }
+  100% {
+    background-color: white;
+  }
+}
+.service-table.error.true {
+  animation: flash-error 1s 1;
+}
+@keyframes flash-error {
+  0% {
+    background-color: lightcoral;
+  }
+  100% {
+    background-color: white;
+  }
+}
+.service-table.loading.true {
+  animation: flash-loading 1s 1;
+}
+@keyframes flash-loading {
   0% {
     background-color: rgb(91, 198, 232);
   }
@@ -88,10 +121,7 @@
   color: red;
 }
 .service-table table tbody tr td.status .success {
-  border: 1px solid green;
-  border-radius: 50%;
-  background-color: #66bf3c;
-  color: lightgreen;
+  color: green;
 }
 
 /*# sourceMappingURL=service-table.css.map */
