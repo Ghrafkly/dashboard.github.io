@@ -1,0 +1,106 @@
+envs:
+  non-prod: ["DEV1", "DEV2", "DEV3", "DEV4", "E2E", "E2E2", "E2E4"]
+  pre-prod: ["QA1", "QA2"]
+  prod: ["PROD"]
+
+links:
+  - name: "Environment Allocations"
+    url: "https://www.google.com"
+  - name: "OCP Dashboard"
+    url: "https://www.github.com"
+
+services:
+  # Dev Support
+  - name: "devsupport"
+    service: "dev-support-v1"
+    repo: "https://repo.github.com"
+    exclude: ["E2E", "E2E4", "QA2"]
+    url:
+      non-prod: "https://nonProd.{env}.com"
+      pre-prod: "https://preProd.{env}.com"
+  # Org Reg Service
+  - name: "orgregservice"
+    service: "orgregservice-v1"
+    repo: "https://repo.github.com"
+    url:
+      non-prod: "https://nonProd.{env}.com"
+      pre-prod: "https://preProd.{env}.com"
+      prod: "https://prod.{env}.com"
+  # Pending Approval
+  - name: "pendingapproval"
+    service: "pendingapproval-v1"
+    repo: "https://repo.github.com"
+    url:
+      non-prod: "https://nonProd.{env}.com"
+      pre-prod: "https://preProd.{env}.com"
+      prod: "https://prod.{env}.com"
+  # Platform Service
+  - name: "platformservice"
+    service: "platformservice-v1"
+    repo: "https://repo.github.com"
+    url:
+      non-prod: "https://nonProd.{env}.com"
+      pre-prod: "https://preProd.{env}.com"
+      prod: "https://prod.{env}.com"
+  # Publish Service
+  - name: "publishservice"
+    service: "publishservice-v1"
+    repo: "https://repo.github.com"
+    url:
+      non-prod: "https://nonProd.{env}.com"
+      pre-prod: "https://preProd.{env}.com"
+      prod: "https://prod.{env}.com"
+  # Ref Data Service
+  - name: "refdataservice"
+    service: "refdataservice-v1"
+    repo: "https://repo.github.com"
+    url:
+      non-prod: "https://nonProd.{env}.com"
+      pre-prod: "https://preProd.{env}.com"
+      prod: "https://prod.{env}.com"
+  # Report Service
+  - name: "reportservice"
+    service: "reportservice-v1"
+    repo: "https://repo.github.com"
+    url:
+      non-prod: "https://nonProd.{env}.com"
+      pre-prod: "https://preProd.{env}.com"
+      prod: "https://prod.{env}.com"
+  # Resource Reg Service
+  - name: "resourceregservice"
+    service: "resourceregservice-v1"
+    repo: "https://repo.github.com"
+    url:
+      non-prod: "https://nonProd.{env}.com"
+      pre-prod: "https://preProd.{env}.com"
+      prod: "https://prod.{env}.com"
+  # User Reg Service
+  - name: "userregservice"
+    service: "userregservice-v1"
+    repo: "https://repo.github.com"
+    url:
+      non-prod: "https://nonProd.{env}.com"
+      pre-prod: "https://preProd.{env}.com"
+      prod: "https://prod.{env}.com"
+  # Service Proxy
+  - name: "serviceproxy"
+    service: "serviceproxy-v1"
+    repo: "https://repo.github.com"
+    url:
+      non-prod: "https://nonProd.{env}.com"
+      pre-prod: "https://preProd.{env}.com"
+      prod: "https://prod.{env}.com"
+  # Kafka Publisher
+  - name: "kafkapublisher"
+    service: "cobra-kafka-publisher"
+    repo: "https://repo.github.com"
+    url:
+      non-prod: "https://nonProd.{env}.com"
+      pre-prod: "https://preProd.{env}.com"
+  # Kafka Filter
+  - name: "kafkafilter"
+    service: "cobra-kafka-filter"
+    repo: "https://repo.github.com"
+    url:
+      non-prod: "https://nonProd.{env}.com"
+      pre-prod: "https://preProd.{env}.com"

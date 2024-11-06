@@ -1,4 +1,4 @@
-import "../styles/footer.sass";
+import "../../styles/footer.sass";
 import { FaGithub } from "react-icons/fa6";
 
 const Footer = () => {

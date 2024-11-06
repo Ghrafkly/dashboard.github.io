@@ -1,7 +1,7 @@
 import { reactRouterParameters, withRouter } from "storybook-addon-remix-react-router";
 import type { Meta, StoryObj } from '@storybook/react';
 
-import Navbar from '../components/Navbar';
+import Navbar from '../components/common/Navbar.tsx';
 
 const meta = {
     title: 'Example/Navbar',

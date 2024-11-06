@@ -1,9 +1,9 @@
-import Header from "../components/Header.tsx";
+import Header from "../components/common/Header.tsx";
 
 const Release = () => {
     return (
         <>
-            <Header title="Release Management"/>
+            <Header heading="Release Management"/>
         </>
     );
 }

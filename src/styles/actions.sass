@@ -1,25 +1,38 @@
 @use 'colours' as col
+@use 'mixins' as mix
+@use 'sass:color'
 
-#actions
+.actions
   padding: 0
+  max-width: initial
 
-  #actions-grid
-    display: grid
-    grid-gap: 5px
-    font-family: Consolas, monospace
+  .actions-title
+    display: flex
+    justify-content: space-between
 
-    .action-group
-      display: grid
-      grid-gap: 5px
+    div
+      font-size: 20px
 
+      display: flex
+      align-items: center
+      gap: 5px
+
+      .help-icon
+        font-size: 16px
+
+    .selector-group
       button
-        background-color: transparent
-        border: 1px solid rgba(0, 0, 0, 0.1)
-        cursor: pointer
-        margin: 0
-        padding: 5px
-        text-align: center
+        @include mix.filter-button
+        width: 100px
 
-        &:hover
-          background-color: rgba(0, 0, 0, 0.1)
+  .action-group
+    display: flex
+    flex-wrap: wrap
+    gap: 5px
 
+    button
+      @include mix.filter-button
+
+#Links
+  button
+    text-align: left

@@ -1,0 +1,7 @@
+services:
+  mock-api:
+    image: dotronglong/faker:stable
+    volumes:
+      - ./:/app/mocks
+    ports:
+      - "3030:3030"

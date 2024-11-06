@@ -1,0 +1,30 @@
+{
+  "plugins": [
+    {
+      "name": "delay",
+      "args": { "duration": 1 }
+    }
+  ],
+  "request": {
+    "method": "GET",
+    "path": "/m/info"
+  },
+  "response": {
+    "body": {
+      "git": {
+        "commit": {
+          "id": {
+            "abbrev": "d2abb12",
+            "full": "1e1b1db11e1b1db1e1b1d"
+          },
+          "time": "2019-01-01T00:00:00Z"
+        },
+        "branch": "feature/ONAR-27333",
+        "build": {
+          "time": "2019-01-01T00:00:00Z",
+          "version": "25.2.2-ekyc-snapshot"
+        }
+      }
+    }
+  }
+}

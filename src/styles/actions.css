@@ -1,25 +1,91 @@
-#actions {
+.actions {
   padding: 0;
+  max-width: initial;
 }
-#actions #actions-grid {
-  display: grid;
-  grid-gap: 5px;
-  font-family: Consolas, monospace;
+.actions .actions-title {
+  display: flex;
+  justify-content: space-between;
 }
-#actions #actions-grid .action-group {
-  display: grid;
-  grid-gap: 5px;
+.actions .actions-title div {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
-#actions #actions-grid .action-group button {
+.actions .actions-title div .help-icon {
+  font-size: 16px;
+}
+.actions .actions-title .selector-group button {
   background-color: transparent;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: none;
   cursor: pointer;
-  margin: 0;
-  padding: 5px;
-  text-align: center;
+  padding: 2px 0;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100px;
 }
-#actions #actions-grid .action-group button:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+.actions .actions-title .selector-group button::before {
+  display: flex;
+  content: attr(title);
+  font-weight: bold;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+.actions .actions-title .selector-group button:hover {
+  font-weight: bold;
+}
+.actions .actions-title .selector-group button.selected {
+  background-color: lightgreen;
+}
+.actions .actions-title .selector-group button.selected:hover {
+  background-color: #64e764;
+}
+.actions .actions-title .selector-group button.not-selected {
+  background-color: lightcoral;
+}
+.actions .actions-title .selector-group button.not-selected:hover {
+  background-color: #eb5252;
+}
+.actions .action-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.actions .action-group button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 2px 0;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.actions .action-group button::before {
+  display: flex;
+  content: attr(title);
+  font-weight: bold;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+.actions .action-group button:hover {
+  font-weight: bold;
+}
+.actions .action-group button.selected {
+  background-color: lightgreen;
+}
+.actions .action-group button.selected:hover {
+  background-color: #64e764;
+}
+.actions .action-group button.not-selected {
+  background-color: lightcoral;
+}
+.actions .action-group button.not-selected:hover {
+  background-color: #eb5252;
+}
+
+#Links button {
+  text-align: left;
 }
 
 /*# sourceMappingURL=actions.css.map */

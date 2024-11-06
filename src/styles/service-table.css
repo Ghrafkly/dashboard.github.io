@@ -1,0 +1,97 @@
+.service-table {
+  border-radius: 5px;
+  overflow: hidden;
+  padding-top: 10px;
+}
+.service-table.success {
+  box-shadow: 0 0 10px 0 green;
+}
+.service-table.warning {
+  box-shadow: 0 0 10px 0 rgb(223, 122, 0);
+}
+.service-table.error {
+  box-shadow: 0 0 10px 0 red;
+}
+.service-table.loading {
+  box-shadow: 0 0 10px 0 rgb(122, 153, 172);
+}
+.service-table.true {
+  animation: flash 1s 1;
+}
+@keyframes flash {
+  0% {
+    background-color: rgb(91, 198, 232);
+  }
+  100% {
+    background-color: white;
+  }
+}
+.service-table .table-title {
+  font-size: xx-large;
+  color: rgb(110, 110, 110);
+  font-weight: bold;
+  margin: 0;
+  padding-left: 8px;
+  padding-bottom: 10px;
+}
+.service-table table {
+  border-top: 1px solid rgb(122, 153, 172);
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+}
+.service-table table tbody tr:last-child {
+  border-radius: inherit;
+}
+.service-table table tbody tr:hover {
+  font-weight: bold;
+  background-color: rgb(185, 201, 208);
+}
+.service-table table tbody tr td {
+  padding: 5px 0;
+}
+.service-table table tbody tr td:first-child {
+  padding-left: 10px;
+}
+.service-table table tbody tr td:last-child {
+  padding-right: 10px;
+}
+.service-table table tbody tr td.service, .service-table table tbody tr td.branch, .service-table table tbody tr td.version, .service-table table tbody tr td.updated {
+  min-width: 170px;
+  max-width: 170px;
+}
+.service-table table tbody tr td.gitID {
+  min-width: 80px;
+  max-width: 80px;
+}
+.service-table table tbody tr td.status {
+  width: 40px;
+  text-align: center;
+}
+.service-table table tbody tr td.status a {
+  display: flex;
+  justify-content: center;
+}
+.service-table table tbody tr td.status .loading {
+  color: blue;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.service-table table tbody tr td.status .error {
+  color: red;
+}
+.service-table table tbody tr td.status .success {
+  border: 1px solid green;
+  border-radius: 50%;
+  background-color: #66bf3c;
+  color: lightgreen;
+}
+
+/*# sourceMappingURL=service-table.css.map */
