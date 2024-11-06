@@ -52,12 +52,13 @@ const Backend = () => {
                 {flattenedEnvs.map((env, index) => {
                     const services = serviceMap.get(env) || [];
                     return (
-                        <ServiceTable className={`service-table ${selectedEnvs.includes(env)}`}
-                                      key={index}
-                                      env={env}
-                                      services={services}
-                                      reload={isLoading}
-                                      style={{display: selectedEnvs.includes(env) ? "" : "none"}}
+                        <ServiceTable
+                            className={`service-table ${selectedEnvs.includes(env)}`}
+                            key={index}
+                            env={env}
+                            services={services}
+                            reload={isLoading}
+                            style={{display: selectedEnvs.includes(env) ? "" : "none"}}
                         />
                     )
                 })}
